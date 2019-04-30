@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+.row{
+    margin-right: 0 !important;
+}
+.column{
+    margin-bottom: 0 !important;
+}
+
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.2) !important;
+    transition: .3s !important;
+    border-radius: 5px !important;
+}
+
+.signup-form .fa-check {
+    left: 17px !important;
+    top: 15px !important;
+    font-size: 8px !important;
+    position: absolute !important;
+    
+}
+
+.logo {
+    vertical-align: middle !important;
+    border-style: none;
+}

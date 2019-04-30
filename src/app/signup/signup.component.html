@@ -1,0 +1,134 @@
+<head>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+  <div class="signup-form">
+    <div class="row justify-content-md-center">
+      <div class="col-md-6">
+        <div class="card center-card mt-5">
+          <div class="card-body">
+            <h2 class="text-center">Register to Gazettizer!</h2>
+            <hr />
+
+            <form #userForm="ngForm">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>First Name:</label>
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                      <input type="text" #fName="ngModel" required class="form-control" placeholder="First Name"
+                        name="firstName" ngModel>
+                      <div *ngIf="fName.errors && (fName.dirty || fName.touched) " class="text-danger">
+                        <div [hidden]="!fName.errors.required">
+                          <label class="text-monospace">First name is required</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Last Name:</label>
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                      <input type="text" #lName="ngModel" pattern="^[1-9][0-9]{5}$" required class="form-control"
+                        placeholder="Last Name" name="lastName" ngModel>
+                      <div *ngIf="lName.errors && (lName.dirty || lName.touched) " class="text-danger">
+                        <div [hidden]="!lName.errors.required">
+                          <label class="text-monospace">Last name is required</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Contact Number:</label>
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                      <input type="text" #contactNo="ngModel" required class="form-control" placeholder="Contact No."
+                        name="telNo" ngModel>
+                      <div *ngIf="contactNo.errors && (contactNo.dirty || contactNo.touched) " class="text-danger">
+                        <div [hidden]="!contactNo.errors.required">
+                          <label class="text-monospace">Please enter the Phone Number </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Email:</label>
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+                      <input type="email" #email="ngModel" placeholder="Email Address" required class="form-control"
+                        name="email" ngModel>
+                      <div *ngIf="email.errors && (email.dirty || email.touched) " class="text-danger">
+                        <div [hidden]="!email.errors.required">
+                          <label class="text-monospace">Email is required</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Password:</label>
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                      <input type="password" #password="ngModel" placeholder="Password" required class="form-control"
+                        name="password" ngModel>
+                      <div *ngIf="password.errors && (password.dirty || password.touched) " class="text-danger">
+                        <div [hidden]="!password.errors.required">
+                          <label class="text-monospace">Please enter a Password </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Confirm Password:</label>
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        <i class="fa fa-lock"></i>
+                        <i class="fa fa-check"></i>
+                      </span>
+                      <input type="password" #cPassword="ngModel" required class="form-control"
+                        placeholder="Confirm Password" name="conPassword" ngModel>
+                      <div *ngIf="cPassword.errors && (cPassword.dirty || cPassword.touched) " class="text-danger">
+                        <div [hidden]="!cPassword.errors.required">
+                          <label class="text-monospace">Please Confirm your Password </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group text-center">
+                <button class="btn btn-success" (click)="saveUserDetails(userForm.value)" [routerLink]="['/login']">Sign
+                  Up</button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

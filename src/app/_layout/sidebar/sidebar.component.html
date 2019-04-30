@@ -1,0 +1,16 @@
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ </head>
+
+ <body>
+<div class="bg-dark border-right" id="sidebar-wrapper">
+  <div class="list-group list-group-flush">
+    <a href="dashboard/home"  [ngClass]="{ 'active-nav':activeTab==='home'}" class="list-group-item list-group-item-action"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+    <a href="dashboard/search"  [ngClass]="{ 'active-nav':activeTab==='search'}" class="list-group-item list-group-item-action "><i class="material-icons" style="font-size:20px">history</i> Recents</a>
+    <a href="dashboard/aboutus"  [ngClass]="{ 'active-nav':activeTab==='about'}" class="list-group-item list-group-item-action "><i class="fa fa-group"></i> About Us</a>
+  </div>
+</div>
+</body>
